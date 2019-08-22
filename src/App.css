@@ -23,6 +23,14 @@
   color: #61dafb;
 }
 
+#item {
+  width: 300px;
+  height: 400px;
+  font-size: 2.5vw;
+  border-color: dimgray;
+  border-width: 8px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

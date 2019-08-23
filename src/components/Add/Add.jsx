@@ -3,7 +3,7 @@ import { Button } from "reactstrap";
 import Modal from "../Modal/Modal";
 
 class Add extends React.Component {
-  state = { show: false, users: 0 };
+  state = { show: false, items: [] };
 
   showModal = () => {
     this.setState({
@@ -13,19 +13,19 @@ class Add extends React.Component {
   };
 
   handleSubmit = e => {
-    console.log(this);
     e.preventDefault();
-    this.setState({ users: this.state.users + 1 });
-
     this.showModal();
   };
 
-  addUser = () => {
-    console.log(this);
-    this.setState(prevState => {
-      return {
-        users: (prevState.users += 1)
-      };
+  handleChange = () => {
+    this.setState({
+      ...this.state,
+      items: [
+        this.state.items,
+        <Button id="item" onClick={this.showModal} variant="secondary">
+          +
+        </Button>
+      ]
     });
   };
 
@@ -35,18 +35,20 @@ class Add extends React.Component {
         <Button id="item" onClick={this.showModal} variant="secondary">
           +
         </Button>
-
-        <button onClick={this.addUser}>Add User</button>
         {this.state.users}
         <Modal show={this.state.show} onClose={this.showModal}>
           <form onSubmit={this.handleSubmit}>
             <div>
               <label>Price</label>
               <input type="text" />
-              <button type="submit">Submit</button>
+              <button type="submit" onClick={this.handleChange}>
+                Submit
+              </button>
             </div>
           </form>
         </Modal>
+
+        {this.state.items.map(child => child)}
       </div>
     );
   }

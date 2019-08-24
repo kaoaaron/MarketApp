@@ -27,25 +27,22 @@ const footerStyle = {
 };
 
 class Modal extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { price: "", desc: "" };
+  }
+
   onClose = e => {
     this.props.onClose && this.props.onClose(e);
   };
 
   handleSubmit = e => {
     e.preventDefault();
-    this.props.onSubmit();
+    this.props.onSubmit(this.state.price, this.state.desc);
   };
 
-  handleChange = () => {
-    this.setState({
-      ...this.state,
-      items: [
-        this.state.items,
-        <Button id="item" onClick={this.showModal} variant="secondary">
-          Content Here
-        </Button>
-      ]
-    });
+  handleChange = event => {
+    this.setState({ price: event.target.value });
   };
 
   render() {
@@ -59,19 +56,32 @@ class Modal extends React.Component {
           <form onSubmit={this.handleSubmit}>
             <div>
               <label>Price: </label>
-              <input type="text" />
+              <input
+                type="text"
+                value={this.state.price}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div>
+              <label>Description: </label>
+              <input
+                type="text"
+                value={this.state.desc}
+                onChange={this.handleChange}
+              />
+            </div>
+
+            <div style={footerStyle}>
+              <Button
+                onClick={e => {
+                  this.onClose(e);
+                }}
+              >
+                Close
+              </Button>
               <button type="submit">Submit</button>
             </div>
           </form>
-          <div style={footerStyle}>
-            <Button
-              onClick={e => {
-                this.onClose(e);
-              }}
-            >
-              Close
-            </Button>
-          </div>
         </div>
       </div>
     );

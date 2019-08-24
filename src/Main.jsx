@@ -6,13 +6,15 @@ import Add from "./components/Add/Add";
 class Main extends Component {
   state = { items: [] };
 
-  handleChange = () => {
+  handleChange = (price, desc) => {
     this.setState({
       ...this.state,
       items: [
         this.state.items,
         <Button id="item" onClick={this.showModal} variant="secondary">
-          Content Here
+          Price: {price}
+          <br />
+          Description: {desc}
         </Button>
       ]
     });
@@ -21,8 +23,8 @@ class Main extends Component {
   render() {
     return (
       <React.Fragment>
-        {this.state.items.map(child => child)}
         <Add onSubmit={this.handleChange} />
+        {this.state.items.map(child => child)}
       </React.Fragment>
     );
   }

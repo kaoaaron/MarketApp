@@ -12,9 +12,9 @@ class Add extends React.Component {
     });
   };
 
-  handleChangeRedirect = () => {
+  handleChangeRedirect = (price, desc) => {
     this.showModal();
-    this.props.onSubmit();
+    this.props.onSubmit(price, desc);
   };
 
   render() {
@@ -28,6 +28,7 @@ class Add extends React.Component {
           show={this.state.show}
           onClose={this.showModal}
           onSubmit={this.handleChangeRedirect}
+          formData={this.getFormData}
         />
 
         {this.state.items.map(child => child)}

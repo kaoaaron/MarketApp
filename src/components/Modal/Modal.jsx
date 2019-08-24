@@ -30,6 +30,24 @@ class Modal extends React.Component {
   onClose = e => {
     this.props.onClose && this.props.onClose(e);
   };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    this.props.onSubmit();
+  };
+
+  handleChange = () => {
+    this.setState({
+      ...this.state,
+      items: [
+        this.state.items,
+        <Button id="item" onClick={this.showModal} variant="secondary">
+          Content Here
+        </Button>
+      ]
+    });
+  };
+
   render() {
     if (!this.props.show) {
       return null;
@@ -38,7 +56,13 @@ class Modal extends React.Component {
     return (
       <div style={backdropStyle}>
         <div style={modalStyle}>
-          {this.props.children}
+          <form onSubmit={this.handleSubmit}>
+            <div>
+              <label>Price: </label>
+              <input type="text" />
+              <button type="submit">Submit</button>
+            </div>
+          </form>
           <div style={footerStyle}>
             <Button
               onClick={e => {

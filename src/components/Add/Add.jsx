@@ -12,44 +12,26 @@ class Add extends React.Component {
     });
   };
 
-  handleSubmit = e => {
-    e.preventDefault();
+  handleChangeRedirect = () => {
     this.showModal();
-  };
-
-  handleChange = () => {
-    this.setState({
-      ...this.state,
-      items: [
-        this.state.items,
-        <Button id="item" onClick={this.showModal} variant="secondary">
-          +
-        </Button>
-      ]
-    });
+    this.props.onSubmit();
   };
 
   render() {
     return (
-      <div>
+      <React.Fragment>
+        {this.state.users}
         <Button id="item" onClick={this.showModal} variant="secondary">
           +
         </Button>
-        {this.state.users}
-        <Modal show={this.state.show} onClose={this.showModal}>
-          <form onSubmit={this.handleSubmit}>
-            <div>
-              <label>Price</label>
-              <input type="text" />
-              <button type="submit" onClick={this.handleChange}>
-                Submit
-              </button>
-            </div>
-          </form>
-        </Modal>
+        <Modal
+          show={this.state.show}
+          onClose={this.showModal}
+          onSubmit={this.handleChangeRedirect}
+        />
 
         {this.state.items.map(child => child)}
-      </div>
+      </React.Fragment>
     );
   }
 }

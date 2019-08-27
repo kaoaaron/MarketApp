@@ -23,14 +23,6 @@
   color: #61dafb;
 }
 
-#item {
-  width: 300px;
-  height: 400px;
-  font-size: 2.5vw;
-  border-color: dimgray;
-  border-width: 8px;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -38,4 +30,32 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.price {
+}
+
+.plus {
+  font-size: 2em;
+}
+
+.img {
+  width: 50%;
+  height: width;
+  top: 0px;
+  left: 0px;
+}
+
+#itemcontainer {
+  position: relative;
+  max-height: inherit;
+  box-sizing: border-box;
+}
+
+#item {
+  display: relative;
+  width: 300px;
+  height: 400px;
+  font-size: 26px;
+  margin: 5px;
 }

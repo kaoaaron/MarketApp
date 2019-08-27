@@ -11,10 +11,12 @@ class Main extends Component {
       ...this.state,
       items: [
         this.state.items,
-        <Button id="item" onClick={this.showModal} variant="secondary">
-          Price: {price}
+        <Button id="item" onClick={this.showModal} outline color="primary">
+          <img className="img" src={require("./images/testpic.png")} />
           <br />
-          Description: {desc}
+          <span className="price">${price}.00</span>
+          <br />
+          {desc}
         </Button>
       ]
     });

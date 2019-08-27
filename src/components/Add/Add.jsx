@@ -21,8 +21,8 @@ class Add extends React.Component {
     return (
       <React.Fragment>
         {this.state.users}
-        <Button id="item" onClick={this.showModal} variant="secondary">
-          +
+        <Button id="item" onClick={this.showModal} outline color="secondary">
+          <span className="plus">+</span>
         </Button>
         <Modal
           show={this.state.show}

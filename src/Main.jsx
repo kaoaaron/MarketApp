@@ -31,8 +31,6 @@ class Main extends Component {
         <NavBar />
         <Add onSubmit={this.handleChange} />
         {this.state.items.map(child => child)}
-        <Login />
-        <Footer />
       </React.Fragment>
     );
   }

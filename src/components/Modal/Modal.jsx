@@ -72,13 +72,13 @@ class Modal extends React.Component {
             </div>
 
             <div style={footerStyle}>
-              <Button
+              <button
                 onClick={e => {
                   this.onClose(e);
                 }}
               >
                 Close
-              </Button>
+              </button>
               <button type="submit">Submit</button>
             </div>
           </form>

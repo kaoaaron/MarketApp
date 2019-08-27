@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { Button } from "reactstrap";
 import Modal from "./components/Modal/Modal";
 import Add from "./components/Add/Add";
+import NavBar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
+import Login from "./components/Login/Login";
 
 class Main extends Component {
   state = { items: [] };
@@ -25,8 +28,11 @@ class Main extends Component {
   render() {
     return (
       <React.Fragment>
+        <NavBar />
         <Add onSubmit={this.handleChange} />
         {this.state.items.map(child => child)}
+        <Login />
+        <Footer />
       </React.Fragment>
     );
   }

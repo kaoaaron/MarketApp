@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
-
 import { FacebookLoginButton } from "react-social-login-buttons";
 
 class Login extends React.Component {

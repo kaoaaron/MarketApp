@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "reactstrap";
+import { bindExpression } from "@babel/types";
 
 const backdropStyle = {
   position: "fixed",
@@ -29,7 +30,7 @@ const footerStyle = {
 class Modal extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { price: "", desc: "" };
+    this.state = { price: "", item: "" };
   }
 
   onClose = e => {
@@ -38,11 +39,11 @@ class Modal extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.props.onSubmit(this.state.price, this.state.desc);
+    this.props.onSubmit(this.state.price, this.state.item);
   };
 
   handleChange = event => {
-    this.setState({ price: event.target.value });
+    this.setState({ [event.target.name]: event.target.value });
   };
 
   render() {
@@ -57,28 +58,30 @@ class Modal extends React.Component {
             <div>
               <label>Price: </label>
               <input
+                name="price"
                 type="text"
                 value={this.state.price}
                 onChange={this.handleChange}
               />
             </div>
             <div>
-              <label>Description: </label>
+              <label>Item: </label>
               <input
+                name="item"
                 type="text"
-                value={this.state.desc}
+                value={this.state.item}
                 onChange={this.handleChange}
               />
             </div>
 
             <div style={footerStyle}>
-              <Button
+              <button
                 onClick={e => {
                   this.onClose(e);
                 }}
               >
                 Close
-              </Button>
+              </button>
               <button type="submit">Submit</button>
             </div>
           </form>

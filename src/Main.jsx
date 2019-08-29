@@ -39,6 +39,7 @@ class Main extends Component {
     return (
       <React.Fragment>
         <NavBar />
+<<<<<<< HEAD
         <Add onSubmit={this.handleChange} />
         {this.state.items.map(child => child)}
 
@@ -70,6 +71,12 @@ class Main extends Component {
 
         <Signup />
         <Footer />
+=======
+        <div id="body">
+          <Add onSubmit={this.handleChange} />
+          {this.state.items.map(child => child)}
+        </div>
+>>>>>>> 50ac41463199dcaac1b490666f86ff21e1c86f66
       </React.Fragment>
     );
   }

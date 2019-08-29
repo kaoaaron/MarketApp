@@ -30,7 +30,8 @@ class NavBar extends Component {
           <form className="form-inline my-2 my-lg-0">
             <button
               className="btn btn-outline-light my-2 my-sm-0"
-              type="submit"
+              type="Show Modal"
+              onClick={this.showModal}
             >
               Login
             </button>

@@ -21,7 +21,7 @@ class Login extends React.Component {
         </FormGroup>
         <FormGroup>
           <Label>Password</Label>
-          <Input type="password" placeholder="password" />
+          <Input type="password" placeholder="Password" />
         </FormGroup>
         <button className="btn-lg btn-primary btn-block">Log in</button>
         <div className="text-center pt-3">

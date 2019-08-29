@@ -40,7 +40,14 @@
   height: 100%;
 }
 
-.price {
+#body {
+  margin: 2em;
+  padding: 5em;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 50px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
 }
 
 .plus {

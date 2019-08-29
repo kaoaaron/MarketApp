@@ -29,8 +29,10 @@ class Main extends Component {
     return (
       <React.Fragment>
         <NavBar />
-        <Add onSubmit={this.handleChange} />
-        {this.state.items.map(child => child)}
+        <div id="body">
+          <Add onSubmit={this.handleChange} />
+          {this.state.items.map(child => child)}
+        </div>
       </React.Fragment>
     );
   }

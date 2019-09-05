@@ -27,6 +27,12 @@ const footerStyle = {
   bottom: 20
 };
 
+const closeboxStyle = {
+  position: "absolute",
+  bottom: 230,
+  left: 430
+};
+
 class Modal extends React.Component {
   constructor(props) {
     super(props);
@@ -75,14 +81,21 @@ class Modal extends React.Component {
             </div>
 
             <div style={footerStyle}>
-              <button
-                onClick={e => {
-                  this.onClose(e);
-                }}
-              >
-                Close
+              <div style={closeboxStyle}>
+                <div
+                  className="closebox"
+                  onClick={e => {
+                    this.onClose(e);
+                  }}
+                >
+                  <span>
+                    <i className="fas fa-times"></i>
+                  </span>
+                </div>
+              </div>
+              <button type="button" className="btn btn-primary">
+                Submit
               </button>
-              <button type="submit">Submit</button>
             </div>
           </form>
         </div>

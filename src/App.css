@@ -40,7 +40,6 @@
   height: 100%;
 }
 
-<<<<<<< HEAD
 .Signup-form {
   width: 100%;
   max-width: 330px;
@@ -49,8 +48,6 @@
   height: 100%;
 }
 
-.price {
-=======
 #body {
   margin: 2em;
   padding: 5em;
@@ -62,7 +59,6 @@
   -webkit-box-shadow: 0px 0px 30px 10px #0004ff;
   -moz-box-shadow: 0px 0px 30px 10px #0004ff;
   box-shadow: 0px 0px 30px 10px #0004ff;
->>>>>>> 50ac41463199dcaac1b490666f86ff21e1c86f66
 }
 
 .plus {

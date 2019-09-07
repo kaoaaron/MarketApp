@@ -1,6 +1,4 @@
 import React from "react";
-import { Button } from "reactstrap";
-import { bindExpression } from "@babel/types";
 
 const backdropStyle = {
   position: "fixed",
@@ -25,12 +23,6 @@ const modalStyle = {
 const footerStyle = {
   position: "absolute",
   bottom: 20
-};
-
-const closeboxStyle = {
-  position: "absolute",
-  bottom: 230,
-  left: 430
 };
 
 class Modal extends React.Component {
@@ -81,21 +73,14 @@ class Modal extends React.Component {
             </div>
 
             <div style={footerStyle}>
-              <div style={closeboxStyle}>
-                <div
-                  className="closebox"
-                  onClick={e => {
-                    this.onClose(e);
-                  }}
-                >
-                  <span>
-                    <i className="fas fa-times"></i>
-                  </span>
-                </div>
-              </div>
-              <button type="button" className="btn btn-primary">
-                Submit
+              <button
+                onClick={e => {
+                  this.onClose(e);
+                }}
+              >
+                Close
               </button>
+              <button type="submit">Submit</button>
             </div>
           </form>
         </div>

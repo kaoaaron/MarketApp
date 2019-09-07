@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import Login from "../Login/Login";
-import { Button, Form, FormGroup, Label, Input } from "reactstrap";
-import { FacebookLoginButton } from "react-social-login-buttons";
 
 class NavBar extends Component {
   state = {
@@ -9,13 +7,6 @@ class NavBar extends Component {
   };
 
   showLogin = () => {
-    this.setState({
-      ...this.state,
-      show: !this.state.show
-    });
-  };
-
-  showSignup = () => {
     this.setState({
       ...this.state,
       show: !this.state.show
@@ -61,38 +52,7 @@ class NavBar extends Component {
           </form>
         </div>
 
-        <Login onClose={this.showLogin} show={this.state.show}>
-          <form className="login-form">
-            <h2 className="text-center">Login</h2>
-            <FormGroup>
-              <Label>Email</Label>
-              <Input type="email" placeholder="Email" />
-            </FormGroup>
-            <FormGroup>
-              <Label>Password</Label>
-              <Input type="password" placeholder="password" />
-            </FormGroup>
-            <button className="btn-lg btn-primary btn-block">Log in</button>
-            <div className="text-center pt-3">
-              Or continue with your social account
-            </div>
-            <FacebookLoginButton className="mt-3 mb-3" />
-            <div className="text-center">
-              <button
-                type="button"
-                className="btn btn-outline-primary btn-sm"
-                onClick={this.showSignup}
-                value="Show Signup"
-              >
-                Sign Up
-              </button>
-              <span className="p-2">|</span>
-              <button type="button" className="btn btn-outline-primary btn-sm">
-                Forgot Password
-              </button>
-            </div>
-          </form>
-        </Login>
+        <Login onClose={this.showLogin} show={this.state.show}></Login>
       </nav>
     );
   }

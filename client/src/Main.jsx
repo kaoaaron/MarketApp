@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Button } from "reactstrap";
-import Modal from "./components/Modal/Modal";
 import Add from "./components/Add/Add";
 import NavBar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";

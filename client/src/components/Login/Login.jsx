@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { FormGroup, Label, Input } from "reactstrap";
 import { FacebookLoginButton } from "react-social-login-buttons";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import "react-tabs/style/react-tabs.css";
+import "../../App.css";
 
 const backdropStyle = {
   position: "fixed",

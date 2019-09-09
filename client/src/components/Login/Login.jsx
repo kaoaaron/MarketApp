@@ -17,8 +17,8 @@ const backdropStyle = {
 const loginStyle = {
   backgroundColor: "#fff",
   borderRadius: 5,
-  maxWidth: 500,
-  minHeight: 300,
+  width: 500,
+  height: 500,
   margin: "0 auto",
   padding: 30,
   position: "relative"
@@ -30,9 +30,9 @@ const footerStyle = {
 };
 
 const closeStyle = {
-  position: "absolute",
-  bottom: 410,
-  left: 410
+  position: "relative",
+  bottom: 419,
+  left: 400
 };
 
 class Login extends Component {
@@ -78,23 +78,28 @@ class Login extends Component {
                   Or continue with your social account
                 </div>
                 <FacebookLoginButton className="mt-3 mb-3" />
-                <div className="text-center">
-                  <button
-                    type="button"
-                    className="btn btn-outline-primary btn-sm"
-                    onClick={this.showSignup}
-                    value="Show Signup"
-                  >
-                    Sign Up
-                  </button>
-                  <span className="p-2">|</span>
-                  <button
-                    type="button"
-                    className="btn btn-outline-primary btn-sm"
-                  >
-                    Forgot Password
-                  </button>
-                </div>
+              </form>
+            </TabPanel>
+
+            <TabPanel>
+              <form className="login-form">
+                <h2 className="text-center">Register</h2>
+
+                <FormGroup>
+                  <Label>User name</Label>
+                  <Input type="User name" placeholder="User name" />
+                </FormGroup>
+                <FormGroup>
+                  <Label>Email</Label>
+                  <Input type="email" placeholder="Email" />
+                </FormGroup>
+                <FormGroup>
+                  <Label>Password</Label>
+                  <Input type="password" placeholder="Password" />
+                </FormGroup>
+                <button className="btn-lg btn-primary btn-block">
+                  Register
+                </button>
               </form>
             </TabPanel>
           </Tabs>

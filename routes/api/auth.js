@@ -8,16 +8,10 @@ router.post("/api/account/signup", (req, res, next) => {
   const { firstName, lastName, password } = body;
   let { email } = body;
 
-  if (!firstName) {
+  if (!userName) {
     return res.send({
       success: false,
-      message: "Error: First name is blank"
-    });
-  }
-  if (!lastName) {
-    return res.send({
-      success: false,
-      message: "Error: Last name is blank"
+      message: "Error: User name is blank"
     });
   }
   if (!password) {
